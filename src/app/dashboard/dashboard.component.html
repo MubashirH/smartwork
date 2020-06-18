@@ -1,4 +1,8 @@
 <section>
+    <div class="buttons">
+        <button mat-raised-button (click)="sample1()"><mat-icon>keyboard_arrow_left</mat-icon></button>
+        <button mat-raised-button (click)="sample2()"><mat-icon>keyboard_arrow_right</mat-icon></button>
+    </div>
     <table class="table">
         <tr>
             <th rowspan="2"></th>
@@ -15,17 +19,23 @@
         </tr>
         <tr>
             <td colspan="8">
-
                 <mat-accordion>
-                    <mat-expansion-panel>
+                    <mat-expansion-panel [expanded]="true">
                         <mat-expansion-panel-header>
                           <mat-panel-title>Unidentified</mat-panel-title>
                         </mat-expansion-panel-header>
-                        <tr>
-                            <!-- <ng-container *ngFor="let unidentified of tableOne.Undefined Role"> -->
-                                <td></td>
-                            <!-- </ng-container> -->
-                        </tr>
+                        <ng-container *ngFor="let undefined of table.Undefined  | keyvalue">
+                            <tr>
+                                <th>{{undefined}}</th>
+                                <!-- <ng-container *ngIf="undefined.value > 0">
+                                    <td></td>
+                                    <ng-container *ngFor="let unidenty of undefined.value">
+                                        <td>{{unidenty}}</td>
+                                    </ng-container>
+                                    <td></td>
+                                </ng-container> -->
+                            </tr>
+                        </ng-container> 
                     </mat-expansion-panel>
                 </mat-accordion>
             </td>
@@ -33,17 +43,62 @@
         <tr>
             <td colspan="8">
                 <mat-accordion>
-                    <mat-expansion-panel>
+                    <mat-expansion-panel [expanded]="true">
                         <mat-expansion-panel-header>
                           <mat-panel-title>Bartender</mat-panel-title>
                         </mat-expansion-panel-header>
-                        <ng-container *ngFor="let bartender of tableOne.Bartender | keyvalue">
+                        <ng-container *ngFor="let bartender of table.Bartender | keyvalue">
                             <tr>
-                                <ng-container *ngFor="let bar of bartender">
-                                    <td>{{bar.key}}</td>
+                                <th>{{bartender.key}}</th>
+                                <td></td>
+                                <ng-container *ngFor="let bar of bartender.value">
+                                    <td>{{bar}}</td>
                                 </ng-container>
+                                <td></td>
                             </tr>
-                        </ng-container>
+                        </ng-container> 
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8">
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="true">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>Chef</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ng-container *ngFor="let chef of table.Chef | keyvalue">
+                            <tr>
+                                <th>{{chef.key}}</th>
+                                <td></td>
+                                <ng-container *ngFor="let chefValue of chef.value">
+                                    <td>{{chefValue}}</td>
+                                </ng-container>
+                                <td></td>
+                            </tr>
+                        </ng-container> 
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8">
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="true">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>Waiter</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ng-container *ngFor="let waiter of table.Waiter | keyvalue">
+                            <tr>
+                                <th>{{waiter.key}}</th>
+                                <td></td>
+                                <ng-container *ngFor="let waiterValue of waiter.value">
+                                    <td>{{waiterValue}}</td>
+                                </ng-container>
+                                <td></td>
+                            </tr>
+                        </ng-container> 
                     </mat-expansion-panel>
                 </mat-accordion>
             </td>

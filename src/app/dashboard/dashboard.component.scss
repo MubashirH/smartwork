@@ -1,5 +1,29 @@
 table {
     width: 100%;
     table-layout: fixed;
+    border-collapse: collapse;
     th, td { border: 1px solid;}
+}
+
+button { 
+    background-color: #01aa9a;
+    border: none;
+    border-radius: 0;
+    margin-left: 20px;
+    mat-icon { color: white;}
+}
+
+.mat-expansion-panel-header {
+    background-color: rgb(228, 228, 228);
+    height: auto !important;
+    padding: 10px;
+    border-radius: 0;
+    &:focus, &:hover { background: rgb(228, 228, 228);}
+}
+
+.mat-expansion-panel-body {
+    padding: 0;
+    tr {
+        width: 100%;
+    }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import * as sample from '../assets/sample1.json';
+import * as sample1 from '../assets/sample1.json';
+import * as sample2 from '../assets/sample2.json';
 
 
 @Component({
@@ -11,15 +12,19 @@ import * as sample from '../assets/sample1.json';
 })
 export class DashboardComponent implements OnInit {
 
-  public tableOne:any = (sample as any).default;
-  public tableTwo:any = [];
-  constructor(
-    private httpClient: HttpClient
-  ) { 
+  public table:any = (sample1 as any).default;
+  constructor() { 
+  }
+
+  sample1() {
+    this.table = (sample1 as any).default;
+  }
+  sample2() {
+    this.table = (sample2 as any).default;
   }
 
   ngOnInit(): void {
-    console.log(this.tableOne.Bartender);
+    console.log(this.table);
     
   }
   

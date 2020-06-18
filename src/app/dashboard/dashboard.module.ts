@@ -5,6 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HttpClientModule } from '@angular/common/http'
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   {
@@ -19,6 +21,8 @@ const routes: Routes = [
     CommonModule,
     HttpClientModule,
     MatExpansionModule,
+    MatIconModule,
+    MatButtonModule,
     RouterModule.forChild(routes),
   ]
 })
