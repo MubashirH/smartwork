@@ -1,0 +1,52 @@
+<section>
+    <table class="table">
+        <tr>
+            <th rowspan="2"></th>
+            <th colspan="7">10th November 2019 - 16th November 2019</th>
+        </tr>
+        <tr>
+            <th>Sunday</th>
+            <th>Moday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Firday</th>
+            <th>Saturday</th>
+        </tr>
+        <tr>
+            <td colspan="8">
+
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>Unidentified</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <tr>
+                            <!-- <ng-container *ngFor="let unidentified of tableOne.Undefined Role"> -->
+                                <td></td>
+                            <!-- </ng-container> -->
+                        </tr>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>Bartender</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ng-container *ngFor="let bartender of tableOne.Bartender | keyvalue">
+                            <tr>
+                                <ng-container *ngFor="let bar of bartender">
+                                    <td>{{bar.key}}</td>
+                                </ng-container>
+                            </tr>
+                        </ng-container>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </td>
+        </tr>
+    </table>
+</section>

@@ -1,0 +1,64 @@
+{
+	"Undefined Role": {
+		"Open Shifts": []
+	},
+	"Bartender": {
+		"Open Shifts": [
+			"Friday 15th, 7:00 AM - 3:00 PM"
+		],
+		"User 1": [
+			"Monday 11th, 7:00 AM - 3:00 PM",
+			"Tuesday 12th, 7:00 AM - 3:00 PM",
+			"Wednesday 13th, 7:00 AM - 3:00 PM",
+			"Thursday 14th, 7:00 AM - 3:00 PM"
+		],
+		"User 2": [
+			"Monday 11th, 7:00 AM - 3:00 PM",
+			"Tuesday 12th, 7:00 AM - 3:00 PM",
+			"Wednesday 13th, 7:00 AM - 3:00 PM",
+			"Thursday 14th, 7:00 AM - 3:00 PM",
+			"Friday 15th, 7:00 AM - 3:00 PM"
+		]
+	},
+	"Chef": {
+		"Open Shifts": [
+			"Tuesday 12th, 7:00 AM - 1:00 PM"
+		],
+		"User 3": [
+			"Tuesday 12th, 11:00 AM - 7:00 PM",
+			"Friday 15th, 11:00 AM - 7:00 PM"
+		],
+		"User 4": [
+			"Monday 11th, 7:00 AM - 1:00 PM",
+			"Wednesday 13th, 7:00 AM - 1:00 PM",
+			"Thursday 14th, 7:00 AM - 1:00 PM",
+			"Friday 15th, 7:00 AM - 1:00 PM"
+		],
+		"User 5": [
+			"Monday 11th, 3:00 PM - 9:00 PM",
+			"Tuesday 12th, 3:00 PM - 9:00 PM",
+			"Wednesday 13th, 3:00 PM - 9:00 PM",
+			"Thursday 14th, 3:00 PM - 9:00 PM",
+			"Friday 15th, 3:00 PM - 9:00 PM"
+		]
+	},
+	"Waiter": {
+		"User 6": [
+			"Monday 11th, 7:00 AM - 3:00 PM",
+			"Wednesday 13th, 7:00 AM - 3:00 PM",
+			"Thursday 14th, 7:00 AM - 3:00 PM",
+			"Friday 15th, 7:00 AM - 3:00 PM"
+		],
+		"User 7": [
+			"Tuesday 12th, 7:00 AM - 3:00 PM"
+		],
+		"User 8": [
+			"Monday 11th, 3:00 PM - 11:00 PM",
+			"Tuesday 12th, 3:00 PM - 11:00 PM"
+		],
+		"User 9": [
+			"Monday 11th, 8:00 AM - 4:00 PM",
+			"Thursday 14th, 8:00 AM - 4:00 PM"
+		]
+	}
+}
