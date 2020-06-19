@@ -1,43 +1,59 @@
 <section>
     <div class="buttons">
-        <button mat-raised-button (click)="sample1()"><mat-icon>keyboard_arrow_left</mat-icon></button>
-        <button mat-raised-button (click)="sample2()"><mat-icon>keyboard_arrow_right</mat-icon></button>
+        <button mat-raised-button (click)="sample1()">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <button mat-raised-button (click)="sample2()">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
     </div>
     <table class="table">
         <tr>
             <th rowspan="2"></th>
-            <th colspan="7">10th November 2019 - 16th November 2019</th>
+            <ng-container *ngIf="week1; else Week">
+                <th colspan="7">10th November 2019 - 16th November 2019</th>
+            </ng-container>
+            <ng-template #Week>
+                <th colspan="7">17th November 2019 - 23th November 2019</th>
+            </ng-template>
         </tr>
         <tr>
-            <th>Sunday</th>
-            <th>Moday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Firday</th>
-            <th>Saturday</th>
+            <ng-container *ngIf="week1; else week">
+                <th>Sunday 10th</th>
+                <th>Monday 11th</th>
+                <th>Tuesday 12th</th>
+                <th>Wednesday 13th</th>
+                <th>Thursday 14th</th>
+                <th>Firday 15th</th>
+                <th>Saturday 16th</th>
+            </ng-container>
+            <ng-template #week>
+                <th>Sunday 17th</th>
+                <th>Monday 18th</th>
+                <th>Tuesday 19th</th>
+                <th>Wednesday 20th</th>
+                <th>Thursday 21th</th>
+                <th>Firday 22th</th>
+                <th>Saturday 23th</th>
+            </ng-template>
         </tr>
         <tr>
             <td colspan="8">
                 <mat-accordion>
-                    <mat-expansion-panel [expanded]="true" class="panel">
+                    <mat-expansion-panel [expanded]="true" class="undefined">
                         <mat-expansion-panel-header>
-                          <mat-panel-title>Unidentified</mat-panel-title>
+                            <mat-panel-title>Unidentified</mat-panel-title>
                         </mat-expansion-panel-header>
-                        <ng-container *ngFor="let undefined of table.Undefined  | keyvalue">
+                        <ng-container *ngFor="let undefined of table.Undefined | keyvalue">
                             <table>
                                 <tr>
-                                    <th>{{undefined}}</th>
-                                    <!-- <ng-container *ngIf="undefined.value > 0">
-                                        <td></td>
-                                        <ng-container *ngFor="let unidenty of undefined.value">
-                                            <td>{{unidenty}}</td>
-                                        </ng-container>
-                                        <td></td>
+                                    <!-- <th>{{undefined.key}}</th>
+                                    <ng-container *ngFor="let day of days; let i = index">
+                                        <td>{{timing(day, undefined.key, table.Undefined)}}</td>
                                     </ng-container> -->
                                 </tr>
                             </table>
-                        </ng-container> 
+                        </ng-container>
                     </mat-expansion-panel>
                 </mat-accordion>
             </td>
@@ -45,29 +61,17 @@
         <tr>
             <td colspan="8">
                 <mat-accordion>
-                    <mat-expansion-panel [expanded]="true" class="panel">
+                    <mat-expansion-panel [expanded]="true" class="bartender">
                         <mat-expansion-panel-header>
-                          <mat-panel-title>Bartender</mat-panel-title>
+                            <mat-panel-title>Bartender</mat-panel-title>
                         </mat-expansion-panel-header>
                         <table>
                             <ng-container *ngFor="let bartender of table.Bartender | keyvalue">
                                 <tr>
                                     <th>{{bartender.key}}</th>
                                     <ng-container *ngFor="let day of days; let i = index">
-                                        <ng-container *ngFor="let bar of bartender.value">
-                                            <ng-container *ngIf="timing(day, bar)">                                                
-                                                <td></td>
-                                            </ng-container>
-                                        </ng-container>
-                                        <!-- <ng-container *ngFor="let bar of bartender.value">
-                                            <ng-container *ngIf="bar.split(' ') === day, else data">
-                                                <td>{{bar}}</td>
-                                            </ng-container>
-                                            <ng-template #data>
-                                                <td></td>
-                                            </ng-template>
-                                        </ng-container> -->
-                                    </ng-container> 
+                                        <td>{{timing(day, bartender.key, table.Bartender)}}</td>
+                                    </ng-container>
                                 </tr>
                             </ng-container>
                         </table>
@@ -78,26 +82,19 @@
         <tr>
             <td colspan="8">
                 <mat-accordion>
-                    <mat-expansion-panel [expanded]="true" class="panel">
+                    <mat-expansion-panel [expanded]="true" class="chef">
                         <mat-expansion-panel-header>
-                          <mat-panel-title>Chef</mat-panel-title>
+                            <mat-panel-title><strong>Chef</strong></mat-panel-title>
                         </mat-expansion-panel-header>
                         <table>
-                        <ng-container *ngFor="let chef of table.Chef | keyvalue">
+                            <ng-container *ngFor="let chef of table.Chef | keyvalue">
                                 <tr>
                                     <th>{{chef.key}}</th>
-                                    <td></td>
-                                    <ng-container *ngFor="let chefValue of chef.value">
-                                        <td>{{chefValue.split(' ')[2]
-                                            +chefValue.split(' ')[3]
-                                            +chefValue.split(' ')[4]
-                                            +chefValue.split(' ')[5]
-                                            +chefValue.split(' ')[6]
-                                        }}</td>
+                                    <ng-container *ngFor="let day of days; let i = index">
+                                        <td>{{timing(day, chef.key, table.Chef)}}</td>
                                     </ng-container>
-                                    <td></td>
                                 </tr>
-                            </ng-container> 
+                            </ng-container>
                         </table>
                     </mat-expansion-panel>
                 </mat-accordion>
@@ -106,26 +103,19 @@
         <tr>
             <td colspan="8">
                 <mat-accordion>
-                    <mat-expansion-panel [expanded]="true" class="panel">
+                    <mat-expansion-panel [expanded]="true" class="waiter">
                         <mat-expansion-panel-header>
-                          <mat-panel-title>Waiter</mat-panel-title>
+                            <mat-panel-title><strong>Waiter</strong></mat-panel-title>
                         </mat-expansion-panel-header>
                         <table>
-                        <ng-container *ngFor="let waiter of table.Waiter | keyvalue">
+                            <ng-container *ngFor="let waiter of table.Waiter | keyvalue">
                                 <tr>
                                     <th>{{waiter.key}}</th>
-                                    <td></td>
-                                    <ng-container *ngFor="let waiterValue of waiter.value">
-                                        <td>{{waiterValue.split(' ')[2]
-                                            +waiterValue.split(' ')[3]
-                                            +waiterValue.split(' ')[4]
-                                            +waiterValue.split(' ')[5]
-                                            +waiterValue.split(' ')[6]
-                                        }}</td>
+                                    <ng-container *ngFor="let day of days; let i = index">
+                                        <td>{{timing(day, waiter.key, table.Waiter)}}</td>
                                     </ng-container>
-                                    <td></td>
                                 </tr>
-                            </ng-container> 
+                            </ng-container>
                         </table>
                     </mat-expansion-panel>
                 </mat-accordion>

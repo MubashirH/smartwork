@@ -2,7 +2,31 @@ table {
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
-    th, td { border: 1px solid;}
+    th, td { border: 1px solid #f0eff1; }
+    tr {
+        td {
+            text-align: center;
+            &:nth-of-type(1), &:nth-of-type(7){ background-color: rgba(128, 128, 128, 0.274) !important;}
+        }
+    }
+}
+.bartender {
+    td {
+        background-color: #f6c8a3;
+        &:empty { background-color: white;}
+    }
+}
+.chef {
+    td {
+        background-color: #9cd3f4;
+        &:empty { background-color: white;}
+    }
+}
+.waiter {
+    td {
+        background-color: #f9e281;
+        &:empty { background-color: white;}
+    }
 }
 .buttons {
     margin: 20px 0;
@@ -16,9 +40,9 @@ table {
 }
 
 .mat-expansion-panel-header {
-    background-color: rgb(228, 228, 228);
+    background-image: linear-gradient(#ffffff, #eaedee);
     height: auto !important;
-    padding: 10px;
+    padding:5px 10px;
     border-radius: 0;
     &:focus, &:hover { background: rgb(228, 228, 228);}
 }
