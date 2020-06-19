@@ -13,6 +13,7 @@ import * as sample2 from '../assets/sample2.json';
 export class DashboardComponent implements OnInit {
 
   public table:any = (sample1 as any).default;
+  public days:any = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
   constructor() { 
   }
 
@@ -21,6 +22,13 @@ export class DashboardComponent implements OnInit {
   }
   sample2() {
     this.table = (sample2 as any).default;
+  }
+
+  timing( day, data) {
+    if ( day = data.split(' ')[0]) {
+      console.log(data);
+    }
+    // return time;
   }
 
   ngOnInit(): void {
